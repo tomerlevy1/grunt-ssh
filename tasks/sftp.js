@@ -421,6 +421,9 @@ module.exports = function (grunt) {
       proxyConnection.connect(proxyConnectionOptions);
     }
     else {
+      connectionOptions.algorithms = {
+        serverHostKey: ['ssh-dss']
+      };
       c.connect(connectionOptions);
     }
   });
